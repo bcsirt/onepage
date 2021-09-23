@@ -1,8 +1,9 @@
 # onepage
-Création d'un site web onepage.
--Utilisation des langages HTML5 et CSS3.
--Utilisation de flexbox.
--Utilisation de css-grid.
--Position en css.
--
+
+Création d'un site web onepage.<br>
+-Utilisation des langages HTML5 et CSS3.<br>
+-Utilisation de flexbox.<br>
+-Utilisation de css-grid.<br>
+-Gestion des positions en css.
+
 
