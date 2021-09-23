@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One page</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<header>
+<header class="flexContainer">
     <div class="flexContainer">
         <img src="img/logo.jpg" alt="logo img company" class="logo">
         <nav>
@@ -22,135 +21,142 @@
             </ul>
         </nav>
     </div>
+
     <div>
         <h1>Lorem ipsum dolor sit.</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
-        <a href="">Réservation</a>
     </div>
+
+    <a href="" class="btn">Réservation</a>
 </header>
-<section id="a-propos">
-    <article class="flexContainer">
-        <figure>
-            <img src="img/restaurant.jpg" alt="image du restaurant">
-        </figure>
-        <div>
-            <h2>Titre h2</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ratione modi, repudiandae quas molestiae
-                doloremque vitae neque velit officia quia? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
-                aperiam asperiores, commodi deleniti dolor dolore earum enim laudantium libero magnam mollitia nemo,
-                numquam omnis perferendis perspiciatis placeat quaerat quo soluta ullam unde! Delectus, earum fuga fugit
-                illo labore laudantium maiores molestias nam nisi pariatur recusandae tempora voluptates? Repellat,
-                ullam voluptatem!</p>
-        </div>
-    </article>
-</section>
+<main>
+    <section id="a-propos">
 
-<div class="transition">
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
-</div>
+        <article class="flexContainer">
+            <figure>
+                <img src="img/restaurant.jpg" alt="">
+            </figure>
+            <div>
+                <h2>Titre h2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ratione modi, repudiandae quas molestiae doloremque vitae neque velit officia quia?</p>
+            </div>
+        </article>
 
-<section id="services">
+    </section>
 
-    <article>
-        <figure>
-            <video src=""></video>
-        </figure>
-        <div>
-            <h2>Titre h2</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ratione modi, repudiandae quas molestiae
-                doloremque vitae neque velit officia quia?</p>
-        </div>
-    </article>
-
-</section>
-
-<section id="galerie">
-
-    <h2>Galerie photos</h2>
-
-    <div class="container">
-        <figure class="zone1">
-            <img src="img/chef-cuisine.jpg" alt="">
-            <figcaption>
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <a href="">Voir l'article</a>
-            </figcaption>
-        </figure>
-        <figure class="zone2">
-            <img src="img/plat-1.jpg" alt="">
-            <figcaption>
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <a href="">Voir l'article</a>
-            </figcaption>
-        </figure>
-        <figure class="zone3">
-            <img src="img/plat-2.jpg" alt="">
-            <figcaption>
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                <a href="">Voir l'article</a>
-            </figcaption>
-        </figure>
-        <figure class="zone4">
-            <img src="img/citrouilles.jpg" alt="">
-            <figcaption>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <a href="">Voir l'article</a>
-            </figcaption>
-        </figure>
-        <figure class="zone5">
-            <img src="img/plat-3.jpg" alt="">
-            <figcaption>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                <a href="">Voir l'article</a>
-            </figcaption>
-        </figure>
-        <figure class="zone6">
-            <img src="img/cousinade-pandas.png" alt="">
-            <figcaption>
-                <p>Lorem ipsum dolor sit.</p>
-                <a href="">Voir l'article</a>
-            </figcaption>
-        </figure>
+    <div class="transition">
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
     </div>
 
-</section>
+    <section id="services">
 
-<!-- section#expos>(div>h2+ul>li*6)+figure>img -->
-<section id="expos">
-    <div>
-        <h2>Liste des expositions</h2>
-        <ul>
-            <li>Expo 01</li>
-            <li>Expo 02</li>
-            <li>Expo 03</li>
-            <li>Expo 04</li>
-            <li>Expo 05</li>
-        </ul>
-    </div>
-    <figure>
-        <img src="img/sieste-panda.jpg" alt=" photo d'un panda.">
-    </figure>
-</section>
+        <article class="flexContainer">
+            <figure>
+                <!--
+                <video controls poster="img/hello-panda.jpg">
+                    <source src="http://nose-store.com/CRP/videos/pixar.mp4" type="video/mp4">
+                </video>
+                -->
+                <iframe src="https://www.youtube.com/embed/Nl-RVIdTUVI" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </figure>
+            <div>
+                <h2>Titre h2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ratione modi, repudiandae quas molestiae doloremque vitae neque velit officia quia?</p>
+            </div>
+        </article>
 
-<!-- section#temoignages>h2+article*4>lorem7 -->
-<section id="temoignages" class="flexContainer">
-    <h2>Témoignages</h2>
-    <article>
-        <figure><img src="img/avatar_00.png" alt="avatar du panda"></figure>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p></article>
-    <article>
-        <figure><img src="img/avatar_00.png" alt="avatar du panda"></figure>
-        <p>Voluptatibus vitae a qui officiis repellendus eaque.</p></article>
-    <article>
-        <figure><img src="img/avatar_00.png" alt="avatar du panda"></figure>
-        <p>Nesciunt unde nam consectetur repellendus eum? Rem?</p></article>
-    <article>
-        <figure><img src="img/avatar_00.png" alt="avatar du panda"></figure>
-        <p>Non consequatur voluptatem esse culpa impedit? Dignissimos.</p></article>
-</section>
+    </section>
 
-<footer>
+    <section id="galerie">
+
+        <h2>Galerie photos</h2>
+
+        <div class="container">
+            <figure class="zone1">
+                <img src="img/chef-cuisine.jpg" alt="">
+                <figcaption>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <a href="">Voir l'article</a>
+                </figcaption>
+            </figure>
+            <figure class="zone2">
+                <img src="img/plat-1.jpg" alt="">
+                <figcaption>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <a href="">Voir l'article</a>
+                </figcaption>
+            </figure>
+            <figure class="zone3">
+                <img src="img/plat-2.jpg" alt="">
+                <figcaption>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <a href="">Voir l'article</a>
+                </figcaption>
+            </figure>
+            <figure class="zone4">
+                <img src="img/citrouilles.jpg" alt="">
+                <figcaption>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <a href="">Voir l'article</a>
+                </figcaption>
+            </figure>
+            <figure class="zone5">
+                <img src="img/plat-3.jpg" alt="">
+                <figcaption>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    <a href="">Voir l'article</a>
+                </figcaption>
+            </figure>
+            <figure class="zone6">
+                <img src="img/cousinade-pandas.png" alt="">
+                <figcaption>
+                    <p>Lorem ipsum dolor sit.</p>
+                    <a href="">Voir l'article</a>
+                </figcaption>
+            </figure>
+        </div>
+
+    </section>
+
+    <!-- section#expos>(div>h2+ul>li*6)+figure>img -->
+    <section id="expos" class="flexContainer">
+        <div>
+            <h2>Liste des expositions</h2>
+            <ul>
+                <li>Expo 01</li>
+                <li>Expo 02</li>
+                <li>Expo 03</li>
+                <li>Expo 04</li>
+                <li>Expo 05</li>
+            </ul>
+        </div>
+        <figure>
+            <img src="img/sieste-panda.jpg" alt="">
+        </figure>
+    </section>
+
+    <!-- section#temoignages>h2+article*4>lorem7 -->
+    <section id="temoignages" class="flexContainer">
+        <h2>Témoignages</h2>
+        <article>
+            <figure><img src="img/hello-panda.jpg" alt=""></figure>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        </article>
+        <article>
+            <figure><img src="img/hello-panda.jpg" alt=""></figure>
+            <p></p>Voluptatibus vitae a qui officiis repellendus eaque.</p>
+        </article>
+        <article>
+            <figure><img src="img/hello-panda.jpg" alt=""></figure>
+            <p></p>Nesciunt unde nam consectetur repellendus eum? Rem?</p>
+        </article>
+        <article>
+            <figure><img src="img/hello-panda.jpg" alt=""></figure>
+            <p>Non consequatur voluptatem esse culpa impedit? Dignissimos.</p>
+        </article>
+    </section>
+</main>
+<footer class="flexContainer">
     <!-- (div>img+p>lorem10)+div>(div>img*2)+p>lorem6-->
     <div>
         <img src="img/hello-panda.jpg" alt="">

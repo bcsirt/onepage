@@ -1,15 +1,8 @@
-/************/
-/** FONTS **/
-/**********/
 @import url('https://fonts.googleapis.com/css2?family=Carattere&family=Montserrat&display=swap');
-
-/******************************/
-/** VARIABLE DE COULEUR CSS **/
-/****************************/
 :root {
     --violetFonce: #52012f;
     --lavande:#764B8E;
-} 
+}
 html {
     font-size:62.5%; /* 10px */
 }
@@ -42,96 +35,126 @@ ul {
     padding-left: 40px;
     margin: 20px 0;
 }
-img {
+img, video, iframe {
     max-width: 100%;
 }
-
 figure img {
     display: block;
 }
-/*************/
+/**************/
 /** CLASSES **/
-/***********/
+/************/
 .flexContainer {
     display: flex;
 }
-
-.droite {
-
-}
-
 /*************/
 /** HEADER **/
 /***********/
 header {
+    position: relative;
     background-color: var(--lavande);
     min-height: 90vh;
-    background-image: url("../img/montagne.jpg");
+    background-image: url("img/montagne.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-blend-mode: lighten;
-}
-
-img.logo {
-    max-height: 200px;
-}
-/******************/
-/** NAV **********/
-/****************/
-
-header > div.flexContainer {
+    flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
+header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+header h1, header p {
+    margin: 0;
+}
+header h1 {
+    font-size: 6rem;
 
-
+}
+header > * {
+    position: relative;
+}
+img.logo {
+    max-height: 150px;
+}
+header > div.flexContainer {
+    justify-content: space-between;
+    align-self: stretch;
+}
+header > div:last-of-type {
+    color: #fff;
+    text-align: center;
+}
+header > a.btn {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2rem;
+}
+/**** NAV *****/
 nav ul {
     padding: 0;
     margin: 0;
     list-style: none;
-    flex-direction: row;
-    flex-wrap: wrap;
 }
-
 nav li {
-    display: block;
     position: relative;
-
 }
-
 nav li::after {
-    content: "";
-    height: 80%;
-    width: 1px;
-    background-color: black;
+    content:"";
     position: absolute;
-    top: 0;
-    right:0;
+    display: block;
+    height: 70%;
+    width: 2px;
+    background-color: #000;
+    top:15%;
+    right: 0;
 }
-
 nav li:last-child::after {
     display: none;
 }
-
 nav a {
-    background-color:yellow;
+    background-color: yellow;
+    color:#000;
     padding: 1rem;
-    display:block;
+    display: block;
+    transition: all 800ms ease;
 }
-
 nav a:hover {
-    background-color:black;
-    color: white;
-
+    color: yellow;
+    background-color:#000;
 }
-
+/******************/
+/**** A propos ***/
+/****************/
+article.flexContainer {
+    padding: 2rem 0;
+}
+#a-propos article > *, #services article > * {
+    flex: 1 1 0;
+    margin: 0 2rem;
+}
+/**** SERVICES ****/
+#services article.flexContainer {
+    flex-direction: row-reverse;
+}
+#services iframe {
+    object-fit: cover;
+    height: 100%;
+    width:100%;
+}
 /******************/
 /** Transition ***/
 /****************/
 div.transition {
-    background:url(../img/citrouilles.jpg) no-repeat fixed center center;
+    background:url(img/citrouilles.jpg) no-repeat fixed center center;
     background-size: cover;
     filter: sepia(80%);
     font-size: 3.8rem;
@@ -159,7 +182,7 @@ div.transition:hover h3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 4px 4px; 
+    gap: 4px 4px;
     grid-auto-flow: row;
     grid-template-areas:
         "zone1 zone1 zone1 zone2"
@@ -215,60 +238,93 @@ div.transition:hover h3 {
 figcaption a {
     color:yellow;
 }
-/******************/
-/** A PROPOS *****/
-/****************/
-#a-propos article {
-    flex:1;
+figcaption::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    right: 30px;
+    top: 30px;
 }
-
-#a-propos article {
-
-}
-
-
-
-
-/******************/
-/** TEMOIGNAGES **/
-/****************/
+/***************/
+/** temoignages**/
+/**************/
 section#temoignages {
-    flex-flow: row wrap;
+    background-color: paleturquoise;
+    flex-flow:row wrap;
     justify-content: center;
     padding: 4rem;
 }
-
-#temoignages > article > figure > img {
-    border-radius: 50%;
-    position: absolute;
-    height: 100%;
-    top: -10px;
-    width: auto;
-    align-items: center;
-
-
-}
-
 #temoignages > h2 {
     flex: 1 1 100%;
-    margin: 3rem;
+    margin: 0 2rem 5rem;
     text-align: center;
-
 }
-
-#temoignages > article {
-    background-color: lightsalmon;
-    flex: 1 1 200px;
-    border: black 1px solid;
-    justify-content: space-around;
+#temoignages article {
+    background-color: peachpuff;
+    flex: 1 1 calc(100% - 2rem);
+    margin: 1rem;
     position: relative;
-
+    padding: 50px 2rem 2rem;
+}
+#temoignages figure {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+    margin: 0;
+}
+#temoignages figure img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+@media (min-width:768px) {
+    #temoignages article {
+        flex: 1 1 calc(50% - 2rem);
+    }
+}
+@media (min-width:980px) {
+    #temoignages article {
+        flex: 1 1 200px;
+        max-width: 350px;
+    }
+}
+/*************/
+/*** Expos */
+/***********/
+section#expos {
+    padding: 3rem;
+}
+section#expos > * {
+    flex: 1 1 0;
+}
+section#expos > figure {
+    flex-grow:2;
+    margin: 0;
+    max-height: 60vh;
+}
+#expos figure img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+/**************/
+footer {
+    background-color: #111;
+    padding: 3rem;
+    color: #fff;
+}
+footer > * {
+    flex:1 1 0;
+}
+footer img {
+    max-height: 180px;
 }
 
-
-
-
-/******************/
-/** FOOTER *******/
-/****************/
-  
