@@ -124,7 +124,7 @@ nav a {
 nav a:hover {
     background-color:black;
     color: white;
-    transition: ;
+
 }
 
 /******************/
@@ -234,14 +234,35 @@ figcaption a {
 /****************/
 section#temoignages {
     flex-flow: row wrap;
+    justify-content: center;
+    padding: 4rem;
+}
+
+#temoignages > article > figure > img {
+    border-radius: 50%;
+    position: absolute;
+    height: 100%;
+    top: -10px;
+    width: auto;
+    align-items: center;
+
+
 }
 
 #temoignages > h2 {
     flex: 1 1 100%;
+    margin: 3rem;
+    text-align: center;
+
 }
 
 #temoignages > article {
+    background-color: lightsalmon;
     flex: 1 1 200px;
+    border: black 1px solid;
+    justify-content: space-around;
+    position: relative;
+
 }
 
 
