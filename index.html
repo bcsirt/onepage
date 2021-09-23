@@ -12,6 +12,11 @@
     <div class="flexContainer">
         <img src="img/logo.jpg" alt="logo img company" class="logo">
         <nav>
+            <div class="hamburger hamburger--stand">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </div>
             <ul class="flexContainer">
                 <li><a href="#a-propos">Item 01</a></li>
                 <li><a href="#services">Item 02</a></li>
@@ -60,7 +65,7 @@
                 <iframe src="https://www.youtube.com/embed/Nl-RVIdTUVI" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </figure>
             <div>
-                <h2>Titre h2</h2>
+                <h2 class="animeToi slideLeft">Titre h2</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ratione modi, repudiandae quas molestiae doloremque vitae neque velit officia quia?</p>
             </div>
         </article>
@@ -69,7 +74,7 @@
 
     <section id="galerie">
 
-        <h2>Galerie photos</h2>
+        <h2 class="animeToi slideLeft">Galerie photos</h2>
 
         <div class="container">
             <figure class="zone1">
@@ -121,7 +126,7 @@
     <!-- section#expos>(div>h2+ul>li*6)+figure>img -->
     <section id="expos" class="flexContainer">
         <div>
-            <h2>Liste des expositions</h2>
+            <h2 class="animeToi slideLeft">Liste des expositions</h2>
             <ul>
                 <li>Expo 01</li>
                 <li>Expo 02</li>
@@ -137,7 +142,7 @@
 
     <!-- section#temoignages>h2+article*4>lorem7 -->
     <section id="temoignages" class="flexContainer">
-        <h2>Témoignages</h2>
+        <h2 class="animeToi slideLeft">Témoignages</h2>
         <article>
             <figure><img src="img/hello-panda.jpg" alt=""></figure>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
@@ -170,6 +175,35 @@
         <p>Lorem ipsum dolor sit amet consectetur.</p>
     </div>
 </footer>
+<script>
 
+    /********** burger *******/
+    let burger = document.querySelector('.hamburger');
+    let navList = document.querySelector('nav ul');
+
+    burger.addEventListener('click', function() {
+        burger.classList.toggle("is-active");
+        navList.classList.toggle("active");
+    });
+
+    /******* scroll reveal *****/
+    let tab_elementAnim = document.querySelectorAll('.animeToi');
+    //let positionElement = elementAnim.offsetTop;
+    console.log(tab_elementAnim);
+    let windowHeight = window.innerHeight;
+    //console.log(windowHeight);
+
+    window.addEventListener('scroll', function() {
+        let scrollTo = window.pageYOffset;
+        //console.log(scrollTo);
+        tab_elementAnim.forEach( function(el) {
+            let positionElement = el.offsetTop;
+            if( positionElement - windowHeight - scrollTo < -150 ) {
+                el.classList.add('active');
+            }
+        })
+
+    })
+</script>
 </body>
 </html>

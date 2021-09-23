@@ -1,0 +1,19 @@
+.containerSVG {
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+
+path {
+    stroke-dasharray:  4014;
+    animation: traceSVG 2s normal infinite;
+}
+
+@keyframes traceSVG {
+    0% {
+        stroke-dashaoffset: 1678;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}

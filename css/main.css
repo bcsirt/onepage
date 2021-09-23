@@ -3,6 +3,9 @@
     --violetFonce: #52012f;
     --lavande:#764B8E;
 }
+* {
+    box-sizing: border-box;
+}
 html {
     font-size:62.5%; /* 10px */
 }
@@ -24,9 +27,7 @@ h2 {
 a {
     text-decoration: none;
     color: var(--violetFonce);
-    transition-property: color;
-    transition-duration: 800ms;
-    transition-timing-function: ease;
+    transition: color 0.8s ease;
 }
 a:hover {
     color:#fff;
@@ -76,7 +77,26 @@ header h1, header p {
 }
 header h1 {
     font-size: 6rem;
-
+    opacity: 0;
+    transform: translateY(-100px);
+    animation: transOpacity 0.8s 1 normal 0.5s ease-in forwards;
+}
+header p {
+    opacity: 0;
+    transform: translateY(100px);
+    animation: transOpacity2 0.8s 1 normal 1s ease-in forwards;
+}
+@keyframes transOpacity {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes transOpacity2 {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 header > * {
     position: relative;
@@ -99,10 +119,25 @@ header > a.btn {
     margin: 2rem;
 }
 /**** NAV *****/
-nav ul {
-    padding: 0;
+nav ul.flexContainer {
+    padding: 60px 0 0 0;
     margin: 0;
     list-style: none;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: none;
+    height: 0;
+    overflow: hidden;
+    z-index: 10;
+    background-color: yellow;
+    transition: height 1s ease;
+}
+nav ul.flexContainer.active {
+    display: flex;
+    height: 100vh;
 }
 nav li {
     position: relative;
@@ -125,11 +160,101 @@ nav a {
     color:#000;
     padding: 1rem;
     display: block;
-    transition: all 800ms ease;
 }
 nav a:hover {
     color: yellow;
     background-color:#000;
+}
+/*** burger ***/
+.hamburger {
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+    position: relative;
+    z-index: 20;
+}
+.hamburger:hover {
+    opacity: 0.7; }
+.hamburger.is-active:hover {
+    opacity: 0.7; }
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: #000; }
+
+.hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative; }
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+.hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+.hamburger-inner::before {
+    top: -10px; }
+.hamburger-inner::after {
+    bottom: -10px; }
+
+/*
+* Stand
+*/
+.hamburger--stand .hamburger-inner {
+    transition: transform 0.075s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19), background-color 0s 0.075s linear; }
+.hamburger--stand .hamburger-inner::before {
+    transition: top 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+.hamburger--stand .hamburger-inner::after {
+    transition: bottom 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--stand.is-active .hamburger-inner {
+    transform: rotate(90deg);
+    background-color: transparent !important;
+    transition: transform 0.075s 0s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0s 0.15s linear; }
+.hamburger--stand.is-active .hamburger-inner::before {
+    top: 0;
+    transform: rotate(-45deg);
+    transition: top 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1); }
+.hamburger--stand.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(45deg);
+    transition: bottom 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+@media (min-width:768px) {
+    nav ul.flexContainer {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+    }
+    .hamburger {
+        display: none;
+    }
 }
 /******************/
 /**** A propos ***/
@@ -149,6 +274,15 @@ article.flexContainer {
     object-fit: cover;
     height: 100%;
     width:100%;
+}
+.animeToi.slideLeft {
+    transform: translateX(-200px);
+    opacity: 0.2;
+    transition: all 1s ease;
+}
+.animeToi.slideLeft.active {
+    transform: translateX(0);
+    opacity: 1;
 }
 /******************/
 /** Transition ***/
